@@ -1,0 +1,3773 @@
+{
+  "last_node_id": 271,
+  "last_link_id": 513,
+  "nodes": [
+    {
+      "id": 19,
+      "type": "BreakFrames",
+      "pos": [
+        -3896.1572651861943,
+        92.4263859199994
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Frames",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BreakFrames"
+      },
+      "widgets_values": [
+        "C:\\Users\\GameBox\\Videos\\Diffusions\\chef\\input_video.mp4"
+      ]
+    },
+    {
+      "id": 204,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -2505.221420069075,
+        84.07092221914814
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            379
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4xUltrasharp_4xUltrasharpV10.pt"
+      ]
+    },
+    {
+      "id": 203,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        -2495.221420069075,
+        194.070922219148
+      ],
+      "size": {
+        "0": 226.8000030517578,
+        "1": 46
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 379,
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 409,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            450
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 185,
+      "type": "Pipe to/edit any [Crystools]",
+      "pos": [
+        -2999.5936340589324,
+        99.37327971837068
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": null
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "link": 415,
+          "slot_index": 1,
+          "label": "Frames"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "link": 416,
+          "slot_index": 2,
+          "label": "Frame_W"
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "link": 417,
+          "slot_index": 3,
+          "label": "Frame_H"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": [
+            419
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe to/edit any [Crystools]"
+      }
+    },
+    {
+      "id": 75,
+      "type": "ControlNetLoader",
+      "pos": [
+        -1425.5641922598115,
+        340.2186754948103
+      ],
+      "size": {
+        "0": 403.0049133300781,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            122
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "SD1.5\\ControlNet-v1-1\\control_v11p_sd15_lineart.pth"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "ControlNetLoader",
+      "pos": [
+        -1343.6195311695558,
+        7.942126877479359
+      ],
+      "size": {
+        "0": 324.1728210449219,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            64
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "SD1.5\\ControlNet-v1-1\\control_v11p_sd15_lineart.pth"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "Efficient Loader",
+      "pos": [
+        491.7234258547068,
+        124.96353161499813
+      ],
+      "size": {
+        "0": 401.0144958496094,
+        "1": 516.68798828125
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "slot_index": 0
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": 430,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            74
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            75
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            76
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            70,
+            82
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": [],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "SD1.5\\revAnimated_v122EOL.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "cell_shading, video_game style,digital artwork,a little girl witch,detailed face,blue iris,pupils,9:16 aspect ratio, little girl's face,witch hat,cauldron,pot,soup,",
+        "blurry,unrealistic, embedding:Baddream,embedding:UnrealisticDream",
+        "none",
+        "comfy",
+        512,
+        512,
+        1
+      ],
+      "color": "#332233",
+      "bgcolor": "#553355",
+      "shape": 1
+    },
+    {
+      "id": 217,
+      "type": "Pipe from any [Crystools]",
+      "pos": [
+        -2752.221420069075,
+        97.07092221914803
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": 419
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": [
+            448
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "links": [
+            409
+          ],
+          "shape": 3,
+          "slot_index": 1,
+          "label": "Frames"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2,
+          "label": "Height"
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3,
+          "label": "Width"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 6,
+          "label": "AnnotatedGrid"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe from any [Crystools]"
+      }
+    },
+    {
+      "id": 231,
+      "type": "Get resolution [Crystools]",
+      "pos": [
+        423.6005407502336,
+        -143.16384545930103
+      ],
+      "size": {
+        "0": 210,
+        "1": 96
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 443
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 164,
+      "type": "LineartStandardPreprocessor",
+      "pos": [
+        -1235.6195311695558,
+        463.94212687747915
+      ],
+      "size": {
+        "0": 210,
+        "1": 107.83830261230469
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 452
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            301
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LineartStandardPreprocessor"
+      },
+      "widgets_values": [
+        5.5,
+        8,
+        512
+      ]
+    },
+    {
+      "id": 148,
+      "type": "ImageScale",
+      "pos": [
+        -985.6195311695557,
+        158.94212687747944
+      ],
+      "size": {
+        "0": 256.3183898925781,
+        "1": 170
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 304
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 502,
+          "widget": {
+            "name": "width"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 505,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            453
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "ToOrigResolution",
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    },
+    {
+      "id": 158,
+      "type": "ImageScale",
+      "pos": [
+        -985.6195311695557,
+        398.94212687747915
+      ],
+      "size": {
+        "0": 260.0994567871094,
+        "1": 170
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 301
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 503,
+          "widget": {
+            "name": "width"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 506,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            455
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "ToOrigResolution",
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "GetKeyFrames",
+      "pos": [
+        -3557.5247103847596,
+        94.34746753280339
+      ],
+      "size": [
+        315,
+        126
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 15,
+          "slot_index": 0
+        },
+        {
+          "name": "num_keyframes",
+          "type": "INT",
+          "link": 480,
+          "widget": {
+            "name": "num_keyframes"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Keyframes",
+          "type": "IMAGE",
+          "links": [
+            102,
+            415
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Labeled Keyframes",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GetKeyFrames"
+      },
+      "widgets_values": [
+        16,
+        true,
+        true
+      ]
+    },
+    {
+      "id": 261,
+      "type": "Evaluate Integers",
+      "pos": [
+        -1553.3740835214703,
+        956.3697069768531
+      ],
+      "size": [
+        275.4787285816062,
+        170
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 481,
+          "widget": {
+            "name": "a"
+          },
+          "label": "a",
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            482,
+            483
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "SqRoot",
+      "properties": {
+        "Node name for S&R": "Evaluate Integers"
+      },
+      "widgets_values": [
+        "a ** (1/2)",
+        "True",
+        0,
+        null,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    },
+    {
+      "id": 244,
+      "type": "Evaluate Integers",
+      "pos": [
+        -1194.3740835214703,
+        1049.3697069768523
+      ],
+      "size": {
+        "0": 210,
+        "1": 194
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 507,
+          "widget": {
+            "name": "a"
+          },
+          "label": "frame_h"
+        },
+        {
+          "name": "b",
+          "type": "INT",
+          "link": 483,
+          "widget": {
+            "name": "b"
+          },
+          "label": "scale_factor"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            485,
+            499,
+            500
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Scale Height By",
+      "properties": {
+        "Node name for S&R": "Evaluate Integers"
+      },
+      "widgets_values": [
+        "a * b",
+        "True",
+        0,
+        null,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    },
+    {
+      "id": 32,
+      "type": "Get resolution [Crystools]",
+      "pos": [
+        -3232.50515581119,
+        173.26306240315353
+      ],
+      "size": {
+        "0": 210,
+        "1": 96.00000762939453
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 102
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            416
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            417
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "title": "GetKeyframeDim",
+      "properties": {
+        "Node name for S&R": "Get resolution [Crystools]"
+      }
+    },
+    {
+      "id": 72,
+      "type": "Control Net Stacker",
+      "pos": [
+        -443.6195311695557,
+        320.94212687747915
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 122
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 456
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CNET_STACK",
+          "type": "CONTROL_NET_STACK",
+          "links": [
+            120
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Control Net Stacker"
+      },
+      "widgets_values": [
+        1,
+        0,
+        1
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    },
+    {
+      "id": 45,
+      "type": "Control Net Stacker",
+      "pos": [
+        -443.6195311695557,
+        45.94212687747935
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 64
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 454
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": 120,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CNET_STACK",
+          "type": "CONTROL_NET_STACK",
+          "links": [
+            441
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Control Net Stacker"
+      },
+      "widgets_values": [
+        1,
+        0,
+        1
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    },
+    {
+      "id": 56,
+      "type": "BreakGrid",
+      "pos": [
+        1664.6005407502344,
+        7.836154540698998
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "grid",
+          "type": "IMAGE",
+          "link": 86
+        },
+        {
+          "name": "rows",
+          "type": "INT",
+          "link": 495,
+          "widget": {
+            "name": "rows"
+          },
+          "slot_index": 1
+        },
+        {
+          "name": "columns",
+          "type": "INT",
+          "link": 497,
+          "widget": {
+            "name": "columns"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Frames",
+          "type": "IMAGE",
+          "links": [
+            491
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BreakGrid"
+      },
+      "widgets_values": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 267,
+      "type": "Reroute",
+      "pos": [
+        515.4115476723263,
+        27.54066017629008
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 494,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            495
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 268,
+      "type": "Reroute",
+      "pos": [
+        513.4115476723264,
+        60.54066017629007
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 496,
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            497
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 240,
+      "type": "MakeGrid",
+      "pos": [
+        -683.6195311695557,
+        410.94212687747915
+      ],
+      "size": {
+        "0": 210,
+        "1": 122
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 455
+        },
+        {
+          "name": "max_width",
+          "type": "INT",
+          "link": 498,
+          "widget": {
+            "name": "max_width"
+          }
+        },
+        {
+          "name": "max_height",
+          "type": "INT",
+          "link": 499,
+          "widget": {
+            "name": "max_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Grid",
+          "type": "IMAGE",
+          "links": [
+            456,
+            488
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Rows",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "Columns",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MakeGrid"
+      },
+      "widgets_values": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "id": 239,
+      "type": "MakeGrid",
+      "pos": [
+        -683.6195311695557,
+        190.9421268774794
+      ],
+      "size": {
+        "0": 210,
+        "1": 122
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 453
+        },
+        {
+          "name": "max_height",
+          "type": "INT",
+          "link": 500,
+          "widget": {
+            "name": "max_height"
+          }
+        },
+        {
+          "name": "max_width",
+          "type": "INT",
+          "link": 501,
+          "widget": {
+            "name": "max_width"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Grid",
+          "type": "IMAGE",
+          "links": [
+            454,
+            489
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Rows",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "Columns",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MakeGrid"
+      },
+      "widgets_values": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "id": 263,
+      "type": "PreviewImage",
+      "pos": [
+        -1043,
+        1458
+      ],
+      "size": [
+        662.2031683310056,
+        566.2458035910474
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 488
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 264,
+      "type": "PreviewImage",
+      "pos": [
+        -374,
+        1448
+      ],
+      "size": [
+        757.4548520242879,
+        706.7286294308369
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 489
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 265,
+      "type": "PreviewImage",
+      "pos": [
+        402,
+        1450
+      ],
+      "size": [
+        897.4296088945994,
+        669.0835879310494
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 490
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 262,
+      "type": "Primitive integer [Crystools]",
+      "pos": [
+        -3828,
+        497
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "links": [
+            480,
+            481
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Primitive integer [Crystools]"
+      },
+      "widgets_values": [
+        9
+      ]
+    },
+    {
+      "id": 218,
+      "type": "Pipe to/edit any [Crystools]",
+      "pos": [
+        -2156.006288600048,
+        84.5284835530868
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": 448
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "link": null,
+          "slot_index": 1,
+          "label": "Frames"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "link": null,
+          "label": "Frame_W",
+          "slot_index": 2
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "link": null,
+          "slot_index": 3,
+          "label": "Frame_H"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "link": 450,
+          "label": "Frames_US"
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": [
+            411
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe to/edit any [Crystools]"
+      }
+    },
+    {
+      "id": 83,
+      "type": "Pipe from any [Crystools]",
+      "pos": [
+        -1903.6195311695558,
+        123.94212687747941
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": 411
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "links": [
+            510
+          ],
+          "shape": 3,
+          "slot_index": 1,
+          "label": "Frames"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "links": [
+            502,
+            503,
+            504
+          ],
+          "shape": 3,
+          "slot_index": 2,
+          "label": "Frame_W"
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "links": [
+            505,
+            506,
+            507
+          ],
+          "shape": 3,
+          "slot_index": 3,
+          "label": "Frame_H"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "links": [
+            451,
+            452
+          ],
+          "shape": 3,
+          "slot_index": 4,
+          "label": "Frames_US"
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 6,
+          "label": "any_6"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe from any [Crystools]"
+      }
+    },
+    {
+      "id": 243,
+      "type": "Evaluate Integers",
+      "pos": [
+        -1194,
+        829
+      ],
+      "size": {
+        "0": 210,
+        "1": 194
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 504,
+          "widget": {
+            "name": "a"
+          },
+          "label": "frame_w"
+        },
+        {
+          "name": "b",
+          "type": "INT",
+          "link": 482,
+          "widget": {
+            "name": "b"
+          },
+          "label": "scale_factor"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            486,
+            498,
+            501
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Scale Width By",
+      "properties": {
+        "Node name for S&R": "Evaluate Integers"
+      },
+      "widgets_values": [
+        "a * b",
+        "True",
+        0,
+        null,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    },
+    {
+      "id": 166,
+      "type": "OpenposePreprocessor",
+      "pos": [
+        -1224.5641922598113,
+        131.2186754948107
+      ],
+      "size": {
+        "0": 210,
+        "1": 150
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 451
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            304
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "POSE_KEYPOINT",
+          "type": "POSE_KEYPOINT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OpenposePreprocessor"
+      },
+      "widgets_values": [
+        "enable",
+        "enable",
+        "enable",
+        512
+      ]
+    },
+    {
+      "id": 126,
+      "type": "Terminal Log //CM",
+      "pos": [
+        385,
+        854
+      ],
+      "size": {
+        "0": 850.86767578125,
+        "1": 489.39984130859375
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "color": "#222222",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 35,
+      "type": "VAEEncodeTiled",
+      "pos": [
+        959.4115476723262,
+        -128.45933982371
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 433
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 70
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            77
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncodeTiled"
+      },
+      "widgets_values": [
+        512
+      ]
+    },
+    {
+      "id": 223,
+      "type": "Reroute",
+      "pos": [
+        517.4115476723263,
+        -6.459339823709927
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 432
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            433
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 53,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1312.6005407502344,
+        126.83615454069898
+      ],
+      "size": [
+        325,
+        562.0000076293945
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 74
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 75
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 76
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 77
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 82
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            86,
+            508
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        655520415146072,
+        null,
+        20,
+        7,
+        "dpmpp_sde_gpu",
+        "karras",
+        0.6,
+        "auto",
+        "true (tiled)"
+      ],
+      "color": "#443322",
+      "bgcolor": "#665533",
+      "shape": 1
+    },
+    {
+      "id": 266,
+      "type": "PreviewImage",
+      "pos": [
+        2047,
+        -383
+      ],
+      "size": [
+        1473.7569860702265,
+        1132.4863064489473
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 491
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 222,
+      "type": "Pipe from any [Crystools]",
+      "pos": [
+        227.4115476723262,
+        122.54066017629007
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": 429,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "links": [
+            432,
+            443
+          ],
+          "shape": 3,
+          "slot_index": 1,
+          "label": "FrameGrid"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "links": [
+            430
+          ],
+          "shape": 3,
+          "slot_index": 2,
+          "label": "cn_stack"
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "links": [
+            494
+          ],
+          "shape": 3,
+          "slot_index": 3,
+          "label": "Rows"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "links": [
+            496
+          ],
+          "shape": 3,
+          "slot_index": 4,
+          "label": "Cols"
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "links": [],
+          "shape": 3,
+          "slot_index": 6,
+          "label": "any_6"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe from any [Crystools]"
+      }
+    },
+    {
+      "id": 226,
+      "type": "Reroute",
+      "pos": [
+        10,
+        -14
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [
+            440
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 258,
+      "type": "MakeGrid",
+      "pos": [
+        -683.6195311695557,
+        -79.05787312252066
+      ],
+      "size": {
+        "0": 210,
+        "1": 122
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 510,
+          "slot_index": 0
+        },
+        {
+          "name": "max_height",
+          "type": "INT",
+          "link": 485,
+          "widget": {
+            "name": "max_height"
+          }
+        },
+        {
+          "name": "max_width",
+          "type": "INT",
+          "link": 486,
+          "widget": {
+            "name": "max_width"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Grid",
+          "type": "IMAGE",
+          "links": [
+            490,
+            511
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Rows",
+          "type": "INT",
+          "links": [
+            512
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "Columns",
+          "type": "INT",
+          "links": [
+            513
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MakeGrid"
+      },
+      "widgets_values": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "id": 221,
+      "type": "Pipe to/edit any [Crystools]",
+      "pos": [
+        -43,
+        124
+      ],
+      "size": {
+        "0": 216.59999084472656,
+        "1": 146
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "link": 440
+        },
+        {
+          "name": "any_1",
+          "type": "*",
+          "link": 511,
+          "slot_index": 1,
+          "label": "FrameGrid"
+        },
+        {
+          "name": "any_2",
+          "type": "*",
+          "link": 441,
+          "slot_index": 2,
+          "label": "cn_stack"
+        },
+        {
+          "name": "any_3",
+          "type": "*",
+          "link": 512,
+          "slot_index": 3,
+          "label": "Rows"
+        },
+        {
+          "name": "any_4",
+          "type": "*",
+          "link": 513,
+          "label": "Cols",
+          "slot_index": 4
+        },
+        {
+          "name": "any_5",
+          "type": "*",
+          "link": null,
+          "slot_index": 5
+        },
+        {
+          "name": "any_6",
+          "type": "*",
+          "link": null,
+          "slot_index": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CPipeAny",
+          "type": "CPipeAny",
+          "links": [
+            429
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Pipe to/edit any [Crystools]"
+      }
+    },
+    {
+      "id": 271,
+      "type": "PreviewImage",
+      "pos": [
+        1375,
+        1448
+      ],
+      "size": [
+        747.3430513739004,
+        674.9267130295293
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 508
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    }
+  ],
+  "links": [
+    [
+      15,
+      19,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      42,
+      0,
+      45,
+      0,
+      "CONTROL_NET"
+    ],
+    [
+      70,
+      36,
+      4,
+      35,
+      1,
+      "VAE"
+    ],
+    [
+      74,
+      36,
+      0,
+      53,
+      0,
+      "MODEL"
+    ],
+    [
+      75,
+      36,
+      1,
+      53,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      76,
+      36,
+      2,
+      53,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      77,
+      35,
+      0,
+      53,
+      3,
+      "LATENT"
+    ],
+    [
+      82,
+      36,
+      4,
+      53,
+      4,
+      "VAE"
+    ],
+    [
+      86,
+      53,
+      5,
+      56,
+      0,
+      "IMAGE"
+    ],
+    [
+      102,
+      18,
+      0,
+      32,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      72,
+      0,
+      45,
+      2,
+      "CONTROL_NET_STACK"
+    ],
+    [
+      122,
+      75,
+      0,
+      72,
+      0,
+      "CONTROL_NET"
+    ],
+    [
+      301,
+      164,
+      0,
+      158,
+      0,
+      "IMAGE"
+    ],
+    [
+      304,
+      166,
+      0,
+      148,
+      0,
+      "IMAGE"
+    ],
+    [
+      379,
+      204,
+      0,
+      203,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      409,
+      217,
+      1,
+      203,
+      1,
+      "IMAGE"
+    ],
+    [
+      411,
+      218,
+      0,
+      83,
+      0,
+      "CPipeAny"
+    ],
+    [
+      415,
+      18,
+      0,
+      185,
+      1,
+      "*"
+    ],
+    [
+      416,
+      32,
+      0,
+      185,
+      2,
+      "*"
+    ],
+    [
+      417,
+      32,
+      1,
+      185,
+      3,
+      "*"
+    ],
+    [
+      419,
+      185,
+      0,
+      217,
+      0,
+      "CPipeAny"
+    ],
+    [
+      429,
+      221,
+      0,
+      222,
+      0,
+      "CPipeAny"
+    ],
+    [
+      430,
+      222,
+      2,
+      36,
+      1,
+      "CONTROL_NET_STACK"
+    ],
+    [
+      432,
+      222,
+      1,
+      223,
+      0,
+      "*"
+    ],
+    [
+      433,
+      223,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      440,
+      226,
+      0,
+      221,
+      0,
+      "CPipeAny"
+    ],
+    [
+      441,
+      45,
+      0,
+      221,
+      2,
+      "*"
+    ],
+    [
+      443,
+      222,
+      1,
+      231,
+      0,
+      "IMAGE"
+    ],
+    [
+      448,
+      217,
+      0,
+      218,
+      0,
+      "CPipeAny"
+    ],
+    [
+      450,
+      203,
+      0,
+      218,
+      4,
+      "*"
+    ],
+    [
+      451,
+      83,
+      4,
+      166,
+      0,
+      "IMAGE"
+    ],
+    [
+      452,
+      83,
+      4,
+      164,
+      0,
+      "IMAGE"
+    ],
+    [
+      453,
+      148,
+      0,
+      239,
+      0,
+      "IMAGE"
+    ],
+    [
+      454,
+      239,
+      0,
+      45,
+      1,
+      "IMAGE"
+    ],
+    [
+      455,
+      158,
+      0,
+      240,
+      0,
+      "IMAGE"
+    ],
+    [
+      456,
+      240,
+      0,
+      72,
+      1,
+      "IMAGE"
+    ],
+    [
+      480,
+      262,
+      0,
+      18,
+      1,
+      "INT"
+    ],
+    [
+      481,
+      262,
+      0,
+      261,
+      0,
+      "INT"
+    ],
+    [
+      482,
+      261,
+      0,
+      243,
+      1,
+      "INT"
+    ],
+    [
+      483,
+      261,
+      0,
+      244,
+      1,
+      "INT"
+    ],
+    [
+      485,
+      244,
+      0,
+      258,
+      1,
+      "INT"
+    ],
+    [
+      486,
+      243,
+      0,
+      258,
+      2,
+      "INT"
+    ],
+    [
+      488,
+      240,
+      0,
+      263,
+      0,
+      "IMAGE"
+    ],
+    [
+      489,
+      239,
+      0,
+      264,
+      0,
+      "IMAGE"
+    ],
+    [
+      490,
+      258,
+      0,
+      265,
+      0,
+      "IMAGE"
+    ],
+    [
+      491,
+      56,
+      0,
+      266,
+      0,
+      "IMAGE"
+    ],
+    [
+      494,
+      222,
+      3,
+      267,
+      0,
+      "*"
+    ],
+    [
+      495,
+      267,
+      0,
+      56,
+      1,
+      "INT"
+    ],
+    [
+      496,
+      222,
+      4,
+      268,
+      0,
+      "*"
+    ],
+    [
+      497,
+      268,
+      0,
+      56,
+      2,
+      "INT"
+    ],
+    [
+      498,
+      243,
+      0,
+      240,
+      1,
+      "INT"
+    ],
+    [
+      499,
+      244,
+      0,
+      240,
+      2,
+      "INT"
+    ],
+    [
+      500,
+      244,
+      0,
+      239,
+      1,
+      "INT"
+    ],
+    [
+      501,
+      243,
+      0,
+      239,
+      2,
+      "INT"
+    ],
+    [
+      502,
+      83,
+      2,
+      148,
+      1,
+      "INT"
+    ],
+    [
+      503,
+      83,
+      2,
+      158,
+      1,
+      "INT"
+    ],
+    [
+      504,
+      83,
+      2,
+      243,
+      0,
+      "INT"
+    ],
+    [
+      505,
+      83,
+      3,
+      148,
+      2,
+      "INT"
+    ],
+    [
+      506,
+      83,
+      3,
+      158,
+      2,
+      "INT"
+    ],
+    [
+      507,
+      83,
+      3,
+      244,
+      0,
+      "INT"
+    ],
+    [
+      508,
+      53,
+      5,
+      271,
+      0,
+      "IMAGE"
+    ],
+    [
+      510,
+      83,
+      1,
+      258,
+      0,
+      "IMAGE"
+    ],
+    [
+      511,
+      258,
+      0,
+      221,
+      1,
+      "*"
+    ],
+    [
+      512,
+      258,
+      1,
+      221,
+      3,
+      "*"
+    ],
+    [
+      513,
+      258,
+      2,
+      221,
+      4,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "LoadKeyFramesFromVideo",
+      "bounding": [
+        -3906,
+        18,
+        1088,
+        277
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "Preprocess Keyframes",
+      "bounding": [
+        244,
+        -217,
+        1746,
+        916
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "ProcessCNperFrame",
+      "bounding": [
+        -1914,
+        -220,
+        2081,
+        802
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "UpscaleImages",
+      "bounding": [
+        -2664,
+        14,
+        617,
+        252
+      ],
+      "color": "#a1309b",
+      "font_size": 24
+    },
+    {
+      "title": "GetGridSize",
+      "bounding": [
+        -1563,
+        755,
+        589,
+        498
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-01-21T17:00:45.616Z",
+      "modified": "2024-01-23T22:59:06.864Z",
+      "software": "ComfyUI"
+    },
+    "groupNodes": {
+      "Scale By": {
+        "nodes": [
+          {
+            "type": "PrimitiveNode",
+            "pos": [
+              -115,
+              636
+            ],
+            "size": {
+              "0": 210,
+              "1": 82
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "outputs": [
+              {
+                "name": "INT",
+                "type": "INT",
+                "links": [],
+                "slot_index": 0,
+                "widget": {
+                  "name": "b"
+                }
+              }
+            ],
+            "properties": {
+              "Run widget replace on values": false
+            },
+            "index": 0
+          },
+          {
+            "type": "CM_IntBinaryOperation",
+            "pos": [
+              108,
+              468
+            ],
+            "size": {
+              "0": 315.50335693359375,
+              "1": 126
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "a",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "a"
+                },
+                "label": "frame W"
+              },
+              {
+                "name": "b",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "b"
+                },
+                "label": "Scale Factor"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "INT",
+                "type": "INT",
+                "links": null,
+                "shape": 3,
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CM_IntBinaryOperation"
+            },
+            "widgets_values": [
+              "Mul",
+              0,
+              null
+            ],
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            null,
+            0,
+            1,
+            0,
+            2,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            5,
+            "INT"
+          ]
+        ],
+        "external": []
+      },
+      "Video Preproc": {
+        "nodes": [
+          {
+            "type": "BreakFrames",
+            "pos": [
+              -530,
+              270
+            ],
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+              {
+                "name": "Frames",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "BreakFrames"
+            },
+            "widgets_values": [
+              "C:\\Users\\GameBox\\Videos\\Diffusions\\chef\\input_video.mp4"
+            ],
+            "index": 0
+          },
+          {
+            "type": "PrimitiveNode",
+            "pos": [
+              -230,
+              470
+            ],
+            "size": {
+              "0": 261.3918151855469,
+              "1": 82
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "outputs": [
+              {
+                "name": "INT",
+                "type": "INT",
+                "links": [],
+                "slot_index": 0,
+                "widget": {
+                  "name": "b"
+                }
+              }
+            ],
+            "properties": {
+              "Run widget replace on values": false
+            },
+            "index": 1
+          },
+          {
+            "type": "GetKeyFrames",
+            "pos": [
+              86,
+              260
+            ],
+            "size": {
+              "0": 315,
+              "1": 126
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "frames",
+                "type": "IMAGE",
+                "link": null,
+                "slot_index": 0
+              }
+            ],
+            "outputs": [
+              {
+                "name": "Keyframes",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "Labeled Keyframes",
+                "type": "IMAGE",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "GetKeyFrames"
+            },
+            "widgets_values": [
+              20,
+              true,
+              true
+            ],
+            "index": 2
+          },
+          {
+            "type": "Get resolution [Crystools]",
+            "pos": [
+              -180,
+              330
+            ],
+            "size": {
+              "0": 210,
+              "1": 96
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "width",
+                "type": "INT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "height",
+                "type": "INT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 1
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Get resolution [Crystools]"
+            },
+            "index": 3
+          },
+          {
+            "type": "Evaluate Integers",
+            "pos": [
+              86,
+              457
+            ],
+            "size": {
+              "0": 315,
+              "1": 194
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "a",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "a"
+                },
+                "label": "Base"
+              },
+              {
+                "name": "b",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "b"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "INT",
+                "type": "INT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "STRING",
+                "type": "STRING",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Evaluate Integers"
+            },
+            "widgets_values": [
+              "a * b",
+              "True",
+              0,
+              10,
+              0
+            ],
+            "color": "#2a363b",
+            "bgcolor": "#3f5159",
+            "shape": 1,
+            "index": 4
+          },
+          {
+            "type": "Evaluate Integers",
+            "pos": [
+              86,
+              696
+            ],
+            "size": {
+              "0": 315,
+              "1": 194
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "a",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "a"
+                },
+                "label": "Base"
+              },
+              {
+                "name": "b",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "b"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "INT",
+                "type": "INT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "STRING",
+                "type": "STRING",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Evaluate Integers"
+            },
+            "widgets_values": [
+              "a * b",
+              "True",
+              0,
+              10,
+              0
+            ],
+            "color": "#2a363b",
+            "bgcolor": "#3f5159",
+            "shape": 1,
+            "index": 5
+          },
+          {
+            "type": "MakeGrid",
+            "pos": [
+              440,
+              369
+            ],
+            "size": {
+              "0": 315,
+              "1": 122
+            },
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "frames",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "name": "max_width",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "max_width"
+                },
+                "slot_index": 1
+              },
+              {
+                "name": "max_height",
+                "type": "INT",
+                "link": null,
+                "widget": {
+                  "name": "max_height"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "Grid",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "Rows",
+                "type": "INT",
+                "links": [],
+                "shape": 3,
+                "slot_index": 1
+              },
+              {
+                "name": "Columns",
+                "type": "INT",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "MakeGrid"
+            },
+            "widgets_values": [
+              64,
+              64
+            ],
+            "index": 6
+          },
+          {
+            "type": "PreviewImage",
+            "pos": [
+              456,
+              577
+            ],
+            "size": {
+              "0": 357.404541015625,
+              "1": 350.8963928222656
+            },
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "images",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "PreviewImage"
+            },
+            "index": 7
+          },
+          {
+            "type": "Get resolution [Crystools]",
+            "pos": [
+              493,
+              238
+            ],
+            "size": {
+              "0": 210,
+              "1": 96
+            },
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "width",
+                "type": "INT",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "height",
+                "type": "INT",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Get resolution [Crystools]"
+            },
+            "index": 8
+          }
+        ],
+        "links": [
+          [
+            0,
+            0,
+            2,
+            0,
+            19,
+            "IMAGE"
+          ],
+          [
+            0,
+            0,
+            3,
+            0,
+            19,
+            "IMAGE"
+          ],
+          [
+            3,
+            0,
+            4,
+            0,
+            2,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            1,
+            31,
+            "INT"
+          ],
+          [
+            3,
+            1,
+            5,
+            0,
+            2,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            5,
+            1,
+            31,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            6,
+            0,
+            18,
+            "IMAGE"
+          ],
+          [
+            4,
+            0,
+            6,
+            1,
+            29,
+            "INT"
+          ],
+          [
+            5,
+            0,
+            6,
+            2,
+            30,
+            "INT"
+          ],
+          [
+            6,
+            0,
+            7,
+            0,
+            3,
+            "IMAGE"
+          ],
+          [
+            6,
+            0,
+            8,
+            0,
+            3,
+            "IMAGE"
+          ]
+        ],
+        "external": [
+          [
+            6,
+            0,
+            "IMAGE"
+          ]
+        ]
+      },
+      "Group": {
+        "nodes": [
+          {
+            "type": "Pipe to/edit any [Crystools]",
+            "pos": [
+              -35,
+              558
+            ],
+            "size": {
+              "0": 216.59999084472656,
+              "1": 146
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "link": null
+              },
+              {
+                "name": "any_1",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_2",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_3",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_4",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_5",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_6",
+                "type": "*",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Pipe to/edit any [Crystools]"
+            },
+            "index": 0
+          },
+          {
+            "type": "Pipe from any [Crystools]",
+            "pos": [
+              195,
+              556
+            ],
+            "size": {
+              "0": 216.59999084472656,
+              "1": 146
+            },
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_1",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_2",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_3",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_4",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_5",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              },
+              {
+                "name": "any_6",
+                "type": "*",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Pipe from any [Crystools]"
+            },
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            0,
+            0,
+            1,
+            0,
+            78,
+            "CPipeAny"
+          ]
+        ],
+        "external": [],
+        "config": {
+          "0": {
+            "output": {
+              "0": {
+                "visible": false
+              }
+            }
+          },
+          "1": {
+            "output": {
+              "0": {
+                "visible": true
+              }
+            }
+          }
+        }
+      },
+      "Return": {
+        "nodes": [
+          {
+            "type": "Pipe to/edit any [Crystools]",
+            "pos": [
+              -3030,
+              370
+            ],
+            "size": {
+              "0": 216.59999084472656,
+              "1": 146
+            },
+            "flags": {},
+            "order": 29,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "link": null
+              },
+              {
+                "name": "any_1",
+                "type": "*",
+                "link": null,
+                "slot_index": 1,
+                "label": "Frames"
+              },
+              {
+                "name": "any_2",
+                "type": "*",
+                "link": null,
+                "slot_index": 2,
+                "label": "Frame_W"
+              },
+              {
+                "name": "any_3",
+                "type": "*",
+                "link": null,
+                "slot_index": 3,
+                "label": "Frame_H"
+              },
+              {
+                "name": "any_4",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_5",
+                "type": "*",
+                "link": null
+              },
+              {
+                "name": "any_6",
+                "type": "*",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Pipe to/edit any [Crystools]"
+            },
+            "index": 0
+          },
+          {
+            "type": "Pipe from any [Crystools]",
+            "pos": [
+              -2920,
+              370
+            ],
+            "size": {
+              "0": 216.59999084472656,
+              "1": 146
+            },
+            "flags": {},
+            "order": 35,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CPipeAny",
+                "type": "CPipeAny",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "any_1",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 1,
+                "label": "Frames"
+              },
+              {
+                "name": "any_2",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 2,
+                "label": "Height"
+              },
+              {
+                "name": "any_3",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 3,
+                "label": "Width"
+              },
+              {
+                "name": "any_4",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 4
+              },
+              {
+                "name": "any_5",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 5
+              },
+              {
+                "name": "any_6",
+                "type": "*",
+                "links": [],
+                "shape": 3,
+                "slot_index": 6,
+                "label": "AnnotatedGrid"
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Pipe from any [Crystools]"
+            },
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            null,
+            0,
+            0,
+            1,
+            18,
+            "IMAGE"
+          ],
+          [
+            null,
+            0,
+            0,
+            2,
+            32,
+            "INT"
+          ],
+          [
+            null,
+            1,
+            0,
+            3,
+            32,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            185,
+            "CPipeAny"
+          ]
+        ],
+        "external": []
+      }
+    }
+  },
+  "version": 0.4
+}
