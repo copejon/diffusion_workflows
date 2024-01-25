@@ -1,0 +1,1257 @@
+{
+  "last_node_id": 117,
+  "last_link_id": 224,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "ImageScale",
+      "pos": [
+        290.2015062358465,
+        199.21786411359994
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        912,
+        "center"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "PreviewImage",
+      "pos": [
+        937,
+        388
+      ],
+      "size": {
+        "0": 374.91522216796875,
+        "1": 345.9161071777344
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 86
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 12,
+      "type": "PreviewImage",
+      "pos": [
+        569,
+        376
+      ],
+      "size": {
+        "0": 347.847412109375,
+        "1": 354.6282043457031
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 13,
+      "type": "ImageCrop",
+      "pos": [
+        622,
+        201
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12,
+            86,
+            87
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCrop"
+      },
+      "widgets_values": [
+        512,
+        512,
+        0,
+        300
+      ]
+    },
+    {
+      "id": 71,
+      "type": "Reroute",
+      "pos": [
+        1316,
+        205
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 87
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            221
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 2,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        24,
+        125
+      ],
+      "size": [
+        235.1999969482422,
+        638.3553434150164
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "parkour.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "parkour.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 95,
+      "type": "Terminal Log //CM",
+      "pos": [
+        -609,
+        540
+      ],
+      "size": [
+        523.8275085779416,
+        323.2289217498824
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "color": "#222222",
+      "bgcolor": "#000000"
+    },
+    {
+      "id": 81,
+      "type": "Int2String",
+      "pos": [
+        -388.4133156843919,
+        1314.2831728703854
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Int",
+          "type": "INT",
+          "link": 187,
+          "widget": {
+            "name": "Int"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            207
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Int2String"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 103,
+      "type": "ImageListToImageBatch",
+      "pos": [
+        -397.4133156843919,
+        1991.2831728703854
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 209,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            198,
+            213
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageListToImageBatch"
+      }
+    },
+    {
+      "id": 110,
+      "type": "VHS_GetImageCount",
+      "pos": [
+        -395.4133156843919,
+        2057.2831728703873
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 213
+        }
+      ],
+      "outputs": [
+        {
+          "name": "count",
+          "type": "INT",
+          "links": [
+            214
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_GetImageCount"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 109,
+      "type": "Evaluate Integers",
+      "pos": [
+        -395.4133156843919,
+        2138.2831728703873
+      ],
+      "size": [
+        243.09575047154954,
+        194
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 214,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            215
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Evaluate Integers"
+      },
+      "widgets_values": [
+        "a ** (1/2)",
+        "True",
+        0,
+        0,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    },
+    {
+      "id": 74,
+      "type": "Create Grid Image from Batch",
+      "pos": [
+        -115.41331568439163,
+        2038.2831728703857
+      ],
+      "size": [
+        315,
+        178
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 198
+        },
+        {
+          "name": "number_of_columns",
+          "type": "INT",
+          "link": 215,
+          "widget": {
+            "name": "number_of_columns"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            94,
+            216
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Create Grid Image from Batch"
+      },
+      "widgets_values": [
+        0,
+        24,
+        512,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 111,
+      "type": "Reroute",
+      "pos": [
+        169.63546212041274,
+        1008.7304175923923
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 216
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 113,
+      "type": "Reroute",
+      "pos": [
+        155.0215712993505,
+        978.4957911840593
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 223
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            220
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 101,
+      "type": "ImpactImageBatchToImageList",
+      "pos": [
+        -398.79223190012004,
+        1124.8315486368383
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 222
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            193,
+            210,
+            211
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactImageBatchToImageList"
+      }
+    },
+    {
+      "id": 114,
+      "type": "Reroute",
+      "pos": [
+        -398.7066650390625,
+        1045.6416015625
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 221
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            222,
+            223
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 112,
+      "type": "PreviewImage",
+      "pos": [
+        1369.2933349609375,
+        1114.6416015625
+      ],
+      "size": [
+        830.1792951266834,
+        1084.3848369867142
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 218
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 97,
+      "type": "ListCounter //Inspire",
+      "pos": [
+        -398.79223190012004,
+        1204.8315486368385
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "signal",
+          "type": "*",
+          "link": 193,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            187
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListCounter //Inspire"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 91,
+      "type": "workflow/OverlayText",
+      "pos": [
+        -405.4133156843919,
+        1401.2831728703854
+      ],
+      "size": [
+        418.1999816894531,
+        526
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 210
+        },
+        {
+          "name": "base_image",
+          "type": "IMAGE",
+          "link": 211
+        },
+        {
+          "name": "optional_mask",
+          "type": "MASK",
+          "link": null
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 207,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "Image Overlay IMAGE",
+          "type": "IMAGE",
+          "links": [
+            209
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/OverlayText"
+      },
+      "widgets_values": [
+        "Ubuntu-Bold.ttf",
+        48,
+        "black",
+        false,
+        0,
+        0,
+        512,
+        512,
+        "None",
+        "nearest-exact",
+        1,
+        512,
+        512,
+        0,
+        0,
+        0,
+        0,
+        "Chibi-Nodes"
+      ]
+    },
+    {
+      "id": 50,
+      "type": "PreviewImage",
+      "pos": [
+        223.2933349609375,
+        1097.6416015625
+      ],
+      "size": [
+        1112.5438646347034,
+        1218.637623692227
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 94
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 51,
+      "type": "ImageSelector",
+      "pos": [
+        1361.2933349609375,
+        987.6416015625
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 220
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            218
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageSelector"
+      },
+      "widgets_values": [
+        "1,19,58,85"
+      ]
+    }
+  ],
+  "links": [
+    [
+      9,
+      2,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      11,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      13,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      86,
+      13,
+      0,
+      54,
+      0,
+      "IMAGE"
+    ],
+    [
+      87,
+      13,
+      0,
+      71,
+      0,
+      "*"
+    ],
+    [
+      94,
+      74,
+      0,
+      50,
+      0,
+      "IMAGE"
+    ],
+    [
+      187,
+      97,
+      0,
+      81,
+      0,
+      "INT"
+    ],
+    [
+      193,
+      101,
+      0,
+      97,
+      0,
+      "*"
+    ],
+    [
+      198,
+      103,
+      0,
+      74,
+      0,
+      "IMAGE"
+    ],
+    [
+      207,
+      81,
+      0,
+      91,
+      3,
+      "STRING"
+    ],
+    [
+      209,
+      91,
+      3,
+      103,
+      0,
+      "IMAGE"
+    ],
+    [
+      210,
+      101,
+      0,
+      91,
+      0,
+      "IMAGE"
+    ],
+    [
+      211,
+      101,
+      0,
+      91,
+      1,
+      "IMAGE"
+    ],
+    [
+      213,
+      103,
+      0,
+      110,
+      0,
+      "IMAGE"
+    ],
+    [
+      214,
+      110,
+      0,
+      109,
+      0,
+      "INT"
+    ],
+    [
+      215,
+      109,
+      0,
+      74,
+      1,
+      "INT"
+    ],
+    [
+      216,
+      74,
+      0,
+      111,
+      0,
+      "*"
+    ],
+    [
+      218,
+      51,
+      0,
+      112,
+      0,
+      "IMAGE"
+    ],
+    [
+      220,
+      113,
+      0,
+      51,
+      0,
+      "IMAGE"
+    ],
+    [
+      221,
+      71,
+      0,
+      114,
+      0,
+      "*"
+    ],
+    [
+      222,
+      114,
+      0,
+      101,
+      0,
+      "IMAGE"
+    ],
+    [
+      223,
+      114,
+      0,
+      113,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "01_Convert to Frames",
+      "bounding": [
+        11,
+        -57,
+        1281,
+        928
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "02_Select Keyframes",
+      "bounding": [
+        -415,
+        931,
+        2633,
+        1411
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-01-25T04:52:01.761Z",
+      "modified": "2024-01-25T19:30:58.368Z",
+      "software": "ComfyUI"
+    },
+    "groupNodes": {
+      "OverlayText": {
+        "nodes": [
+          {
+            "type": "ImageAddText",
+            "pos": [
+              -26,
+              933
+            ],
+            "size": {
+              "0": 210,
+              "1": 266
+            },
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "name": "text",
+                "type": "STRING",
+                "link": null,
+                "widget": {
+                  "name": "text"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              },
+              {
+                "name": "MASK",
+                "type": "MASK",
+                "links": [],
+                "shape": 3
+              },
+              {
+                "name": "text",
+                "type": "STRING",
+                "links": [],
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ImageAddText"
+            },
+            "widgets_values": [
+              "Chibi-Nodes",
+              "Ubuntu-Bold.ttf",
+              24,
+              "black",
+              false,
+              0,
+              0,
+              512,
+              512
+            ],
+            "index": 0
+          },
+          {
+            "type": "Image Overlay",
+            "pos": [
+              96,
+              1224
+            ],
+            "size": {
+              "0": 243.03253173828125,
+              "1": 290
+            },
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "base_image",
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "name": "overlay_image",
+                "type": "IMAGE",
+                "link": null,
+                "slot_index": 1
+              },
+              {
+                "name": "optional_mask",
+                "type": "MASK",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "shape": 3,
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "Image Overlay"
+            },
+            "widgets_values": [
+              "None",
+              "nearest-exact",
+              1,
+              512,
+              512,
+              0,
+              0,
+              0,
+              0
+            ],
+            "color": "#2a363b",
+            "bgcolor": "#3f5159",
+            "shape": 1,
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            null,
+            0,
+            0,
+            0,
+            80,
+            "IMAGE"
+          ],
+          [
+            null,
+            0,
+            0,
+            1,
+            81,
+            "STRING"
+          ],
+          [
+            null,
+            0,
+            1,
+            0,
+            80,
+            "IMAGE"
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            79,
+            "IMAGE"
+          ]
+        ],
+        "external": [
+          [
+            1,
+            0,
+            "IMAGE"
+          ]
+        ],
+        "config": {
+          "0": {
+            "output": {
+              "0": {
+                "visible": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "version": 0.4
+}
